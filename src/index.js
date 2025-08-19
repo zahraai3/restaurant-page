@@ -1,7 +1,5 @@
 import './style.css';
 
-console.log("HHIIIIIIIIIII");
-
 const homebtn = document.getElementById("homebtn");
 const menubtn = document.getElementById("menubtn");
 const aboutbtn = document.getElementById("aboutbtn");
@@ -46,7 +44,4 @@ aboutbtn.addEventListener("click", () => {
     showSection(about);
 });
 
-tomenu.addEventListener("click", () => {
-    loadMenu();
-    showSection(menu);
-});
+

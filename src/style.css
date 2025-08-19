@@ -269,3 +269,116 @@ footer button:hover svg {
   border-radius: 15px;
   filter: brightness(65%);
 }
+#about{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    min-height: calc(100vh - 120px); /* ارتفاع كامل الشاشة ناقص ارتفاع الهيدر والفوتر تقريبا */
+    padding: 20px;
+}
+/* ===================== About Container ===================== */
+.aboutcontainer {
+    display: flex;               /* خلي الديف يكون فليكس لسهولة المحاذاة */
+    justify-content: center;     /* نحط المحتوى بالمنتصف أفقياً */
+    align-items: center;         /* نحط المحتوى بالمنتصف عمودياً */
+    min-height: 70vh;            /* ارتفاع الديف يغطي جزء كبير من الشاشة بدون ما يكون كامل الهيدر والفوتر */
+    padding: 20px;               /* مساحة داخلية من كل الجهات */
+    background-color: #fcf3c7da;   /* لون خلفية خفيف وراقي */
+}
+
+.about {
+    background-color: #fcf3c7da;   /* خلفية بيضاء للبطاقة */
+    padding: 30px 40px;          /* مساحة داخلية أكبر للبطاقة */
+    border-radius: 15px;         /* حواف دائرية ناعمة */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ظل بسيط يعطي إحساس بالارتفاع */
+    max-width: 600px;            /* أقصى عرض للبطاقة */
+    width: 100%;                 /* عرض كامل حتى يضبط على الشاشات الصغيرة */
+    text-align: center;           /* نصوص بالمنتصف */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند hover */
+}
+
+.about:hover {
+    transform: translateY(-5px); /* رفع خفيف عند تمرير الفأرة */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* تكبير الظل */
+}
+
+.about h2 {
+    font-family: var(--mainFont); /* خط أنيق */
+    font-weight: 700;                    /* ثقيل شوي */
+    font-size: 28px;                     /* حجم مناسب */
+    margin-bottom: 15px;                 /* مسافة تحت العنوان */
+    color: #2A3663;                         /* لون داكن للعنوان */
+}
+
+.about p {
+    font-family: var(--secondaryFont);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;                   /* ارتفاع السطر لسهولة القراءة */
+    color: #2A3663;                        /* لون نص خفيف */
+    margin-bottom: 20px;
+}
+
+.about .links {
+    display: flex;
+    justify-content: center;             /* نحط الروابط بالمنتصف */
+    gap: 20px;                           /* مسافة بين كل رابط */
+    align-items: center;                 /* محاذاة الأيقونات مع النص */
+    font-family: var(--mainFont);
+    font-weight: 500;
+    color: #2A3663;
+}
+
+.about .links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color:#faf4d8;
+    border-radius: 50%;                  /* شكل دائري للأيقونات */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;               /* إزالة الخط السفلي */
+    color: #2A3663;
+}
+
+.about .links a:hover {
+    background-color: #36467e;           /* تغيير لون عند hover */
+    transform: scale(1.1);               /* تكبير خفيف */
+    color: var(--secondcolor);
+}
+
+.about .links svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;                  /* يأخذ لون النص */
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 768px) {
+    .about {
+        padding: 20px 25px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 15px;
+    }
+
+    .about .links {
+        gap: 15px;
+    }
+
+    .about .links a {
+        width: 40px;
+        height: 40px;
+    }
+
+    .about .links svg {
+        width: 20px;
+        height: 20px;
+    }
+}
