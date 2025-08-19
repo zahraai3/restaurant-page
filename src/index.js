@@ -5,34 +5,48 @@ console.log("HHIIIIIIIIIII");
 const homebtn = document.getElementById("homebtn");
 const menubtn = document.getElementById("menubtn");
 const aboutbtn = document.getElementById("aboutbtn");
-const menu = document.getElementById("menu");
 const main = document.getElementById("main");
+const menu = document.getElementById("menu");
 const about = document.getElementById("about");
-
+const tomenu = document.getElementById("tomenu");
 
 import { loadHome } from "./home";
 import { loadMenu } from "./menu";
 import { loadAbout } from "./about";
 
+// دالة لإظهار قسم وإخفاء الباقي
+function showSection(sectionToShow) {
+    const sections = [main, menu, about];
+    sections.forEach(section => {
+        if(section === sectionToShow) {
+            section.classList.remove("hide");
+        } else {
+            section.classList.add("hide");
+        }
+    });
+}
+
+// أول مرة تظهر الهوم
 loadHome();
+showSection(main);
 
-homebtn.addEventListener("click",()=>{
+// أزرار التبديل
+homebtn.addEventListener("click", () => {
     loadHome();
-    main.classList.remove("hide");
-    menu.classList.add("hide");
-    about.classList.add("hide"); 
+    showSection(main);
 });
 
-menubtn.addEventListener("click",()=>{
+menubtn.addEventListener("click", () => {
     loadMenu();
-    menu.classList.remove("hide");
-    main.classList.add("hide");
-    about.classList.add("hide"); 
+    showSection(menu);
 });
 
-aboutbtn.addEventListener("click",()=>{
+aboutbtn.addEventListener("click", () => {
     loadAbout();
-    about.classList.remove("hide");
-    main.classList.add("hide");
-    menu.classList.add("hide"); 
-})
+    showSection(about);
+});
+
+tomenu.addEventListener("click", () => {
+    loadMenu();
+    showSection(menu);
+});

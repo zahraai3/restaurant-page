@@ -4,6 +4,7 @@
 :root{
     --mainFont: "Cinzel";
     --secondaryFont:"Raleway";
+    --secondcolor:#fcf3c7;
 }
 
 *{
@@ -11,45 +12,51 @@
     margin: 0%;
     box-sizing: border-box;
 }
+.hide{
+    display: none !important ;
+}
 
 body{
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: url(./images/restaurant-background.jpg);
     background-size: cover;
     background-position: center;
     background-color:rgba(0, 0, 0, 0.6);
     background-blend-mode: darken;
+    box-sizing: border-box;
 }
 header{
     width: 100%;
-    height: auto;
+    height: 70px;
     display:flex;
     margin-right: auto;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     align-items: center;
-    top: 0%;
+
+     
 }
 nav{
     display: flex;
     gap: 8px;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 #homebtn,
 #menubtn,
 #aboutbtn{
     background-color: transparent;
     padding: 10px 15px; 
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 500;
     text-align: center;
-    color: #f5efd2;
+    color: var(--secondcolor);
     font-family: var(--secondaryFont);
     transition: transform 0.1s ease;
     border: none;
@@ -57,11 +64,11 @@ nav{
 #homebtn:hover,
 #menubtn:hover,
 #aboutbtn:hover{
-    border-bottom: 1px solid #FAF6E3;
+    border-bottom: 1px solid var(--secondcolor);
 }
 footer {
     width: 100%; /* عرض كامل الشاشة */
-    height: 70px; /* ارتفاع معتدل */
+    height: 100px; /* ارتفاع معتدل */
     background-color: rgba(0, 0, 0, 0.5); /* خلفية شبه شفافة أسود */
     display: flex;
     justify-content: center; /* تمركز أفقي */
@@ -74,10 +81,11 @@ footer button {
     border: none; /* بدون حدود */
     cursor: pointer; /* شكل المؤشر عند المرور */
     padding: 0; /* إزالة المساحات الداخلية الافتراضية */
+    margin: 10px
 }
 
 footer button svg {
-    fill: #FAF6E3; /* لون الـ SVG */
+    fill: var(--secondcolor); /* لون الـ SVG */
     width: 30px; /* حجم مناسب */
     height: 30px; /* نفس الحجم عمودي */
     transition: transform 0.3s; /* لإضافة تأثير عند المرور إذا أحببت */
@@ -106,47 +114,74 @@ footer button:hover svg {
     font-family: var(--mainFont);
     font-weight: 700;
     font-size: 3rem;
-    color: #FAF6E3;
+    color: var(--secondcolor);
 }
 #main p{
     font-family: var(--secondaryFont);
     font-weight: 500;
     font-size: 1.5rem;
-    color: #FAF6E3;
+    color: var(--secondcolor);
 
 }
 #tomenu{
     padding: 14px 10px;
     border: none;
     background-color: transparent;
-    color: #FAF6E3;
+    color: var(--secondcolor);
     font-weight: bold;
     font-size: medium;
-    border-bottom: 2px solid #FAF6E3;
-    border-top: 2px solid #FAF6E3;
+    border-bottom: 2px solid var(--secondcolor);
+    border-top: 2px solid var(--secondcolor);
     margin-right: auto;
     margin-top: 20px;
     font-family: var(--mainFont);
 }
 #tomenu:hover{
-    background-color: #FAF6E3;
+    background-color: var(--secondcolor);
     color: #2A3663;
 }
+#menu{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0%;
+    justify-content: center;
+    align-items: center;
+}
+.middle{
+    height: 100%;
+    width: 100%;
+}
+#h1menu{
+    font-family: var(--mainFont);
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--secondcolor);
+    text-align: center;
+}
+#container{
+    height: 100%;
+    width: 70%;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 70px;
+    margin-left:auto;
+    margin-right: auto;
+    padding: 50px;
+   
+}
 
-
-
-
-/* 
 .wrapper{
     perspective: 3000px;
 }
 .card{
-    width: 360px;
-    height: 530px;
+    width: 100%;
+    height: 250px;
     transform-style: preserve-3d;
     transition: transform .8s ease-in-out;
     cursor: pointer;
-    border: 1px solid #aaa;
+    border: 1px solid #fcf3c792;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
     -5px -5px 10px rgba(0, 0, 0, 0.05);
     border-radius: 15px;
@@ -163,30 +198,31 @@ footer button:hover svg {
     backface-visibility: hidden;
     border-radius: 15px;
 }
-.front-page{
-    background: url(image.jpg);
-    background-size: cover;
-}
+
 .card-info{
     position: relative;
-    bottom: 50px;
-    left: 45px;
-    color: #fff;
+    /* inset: 0%; */
+    bottom: 80px;
+    /* left: 45px; */
+    color: var(--secondcolor);
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
     text-align: center;
+    height: auto;
+   
 }
 .card-title{
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-weight: bold;
 }
 .card-subtitle{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 400;
     margin-top: 5px;
-    color: black;
+    color: var(--secondcolor);
 }
 .back-page{
-    background-color: black;
-    color: #fff;
+    background-color: #121627;
+    color: var(--secondcolor);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,28 +235,37 @@ footer button:hover svg {
     max-width: 300px;
 }
 .card-content h3{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 .card-description{
-    font-size: 1rem;
-    color: #ccc;
+    font-size: 1.2rem;
+    color:var(--secondcolor) ;
     margin-top: 20px;
     line-height: 1.6;
 }
 .card-button{
-    background-color: #0fbcf9;
-    color: #fff;
+    background-color: transparent;
+    color: var(--secondcolor);
     font-size: 1rem;
     padding: 12px 24px;
-    border: none;
+    border: 1px solid var(--secondcolor);
     cursor: pointer;
     transition: all 0.3s ease;
+    color: var(--secondcolor);
+    margin-top: 25px;
 }
 
 .card-button:hover{
     background-color: transparent;
-    color: #0fbcf9;
-    border:  1px solid #0fbcf9;
-} */
+    color: var(--secondcolor);
+    border:  1px solid var(--secondcolor);
+}
+.front-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 15px;
+  filter: brightness(65%);
+}
