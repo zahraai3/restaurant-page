@@ -283,7 +283,7 @@ footer button:hover svg {
     align-items: center;         /* نحط المحتوى بالمنتصف عمودياً */
     min-height: 70vh;            /* ارتفاع الديف يغطي جزء كبير من الشاشة بدون ما يكون كامل الهيدر والفوتر */
     padding: 20px;               /* مساحة داخلية من كل الجهات */
-    background-color: #fcf3c7da;   /* لون خلفية خفيف وراقي */
+    background-color:/*  #fcf3c7da */transparent;   /* لون خلفية خفيف وراقي */
 }
 
 .about {
